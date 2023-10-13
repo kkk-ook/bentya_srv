@@ -1,0 +1,16 @@
+current directory: /Users/kaz/sennari_srv/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.16.0/ext/bootsnap
+/Users/kaz/.rbenv/versions/3.1.2/bin/ruby -I /Users/kaz/.rbenv/versions/3.1.2/lib/ruby/3.1.0 -r ./siteconf20230419-10424-eiztdm.rb extconf.rb
+creating Makefile
+
+current directory: /Users/kaz/sennari_srv/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= clean
+
+current directory: /Users/kaz/sennari_srv/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\=
+compiling bootsnap.c
+linking shared-object bootsnap/bootsnap.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/kaz/sennari_srv/vendor/bundle/ruby/3.1.0/gems/bootsnap-1.16.0/ext/bootsnap
+make DESTDIR\= install
+/usr/bin/install -c -m 0755 bootsnap.bundle ./.gem.20230419-10424-fj4o05/bootsnap

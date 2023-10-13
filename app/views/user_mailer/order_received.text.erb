@@ -1,0 +1,38 @@
+<%= "#{@resource.last_name} #{@resource.first_name}" %> 様
+
+この度は【千成】をご利用いただき、誠にありがとうございます。
+お客様のご注文を承りました。
+ご注文情報をお送りしますので、下記にてご確認ください。
+
+-------------------------------------------------------
+【ご注文日時】<%= l @order_header.created_at, format: "%Y年%m月%d日(%a) %H時%M分%S秒" %>
+【お届け先】
+<% delivery_location = @resource.delivery_location %>
+<% if delivery_location %>
+<% client = delivery_location.client %>
+<% if client %>
+　<%= "#{client.company_name}" %> 様
+　<%= "〒" + client.postal_code %>
+　<%= Prefecture.find(client.prefecture).name + client.address1.to_s + client.address2.to_s %>
+<% else %>
+　<%= "#{@resource.company_name}" %> 様
+　<%= "〒" + @resource.postal_code %>
+　<%= Prefecture.find(@resource.prefecture).name + @resource.address1.to_s + @resource.address2.to_s %>
+<% end %>
+<% else %>
+　<%= "#{@resource.company_name}" %> 様
+　<%= "〒" + @resource.postal_code %>
+　<%= Prefecture.find(@resource.prefecture).name + @resource.address1.to_s + @resource.address2.to_s %>
+<% end %>
+　<%= "TEL" + @resource.tel %>
+【注文商品】
+<% @orders.each_with_index do |order| %>
+<% order.order_details.each do |order_detail| %>
+　<%= l order_detail.provision_on, format: "%Y年%m月%d日(%a)" %> <%= "#{order.product_name} (#{order_detail.count}個)" %>
+<% end %>
+<% end %>
+【お支払い金額】<%= number_with_delimiter(@order_header.total_price) %>円
+
+ご購入いただいた商品は、マイページの購入履歴からご確認いただけます。
+
+<%= render "devise/mailer/signature" %>

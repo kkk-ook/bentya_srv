@@ -1,0 +1,23 @@
+<%= "#{@resource.last_name} #{@resource.first_name}" %>️ 様
+
+<% if @resource.unconfirmed_email.blank? %>
+【千成】の新規会員への登録を受け付けました。
+下記URLにアクセスいただき、会員登録を完了させてください。
+
+<%= confirmation_url(@resource, {confirmation_token: @token, config: message['client-config'].to_s, redirect_url: message['redirect-url']}) %>
+※URLの有効期限は24時間です
+※複数回メール送信の場合、古いメールのURLは無効となります。最新のURLよりアカウント有効化をしてください。
+
+登録内容に変更がある場合は、会員登録完了後にマイページよりご変更ください。
+<% else %>
+【千成】をご利用いただき、誠にありがとうございます。
+下記URLにアクセスいただき、メールアドレス変更を完了させてください。
+
+<%= confirmation_url(@resource, {confirmation_token: @token, config: message['client-config'].to_s, redirect_url: message['redirect-url']}) %>
+※URLの有効期限は24時間です
+※複数回メール送信の場合、古いメールのURLは無効となります。最新のURLよりアカウント有効化をしてください。
+
+今後とも、千成をよろしくお願いいたします。
+<% end %>
+
+<%= render "signature" %>

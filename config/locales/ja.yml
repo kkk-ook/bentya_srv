@@ -1,0 +1,79 @@
+ja:
+  activerecord:
+    attributes:
+      administrator:
+        name: "管理者名"
+        email: "メールアドレス"
+        password: "パスワード"
+      holiday:
+        holiday_day: "休日"
+      client:
+        code: "顧客コード"
+        name: "顧客名"
+        company_mame: "会社名"
+        postal_code: "郵便番号"
+        prefecture: "都道府県"
+        address1: "市区町村・番地"
+        address2: "建物名・部屋番号"
+        tel: "電話番号"
+        staff_1: "担当者1"
+        staff_2: "担当者2"
+        staff_3: "担当者3"
+        memo: "メモ"
+      delivery_location:
+        client: "顧客ID"
+        name: "納品場所"
+      user:
+        delivery_location: "納品場所ID"
+        user_code: "ユーザーコード"
+        last_name: "姓"
+        first_name: "名"
+        last_name_kana: "セイ"
+        first_name_kana: "メイ"
+        email: "メールアドレス"
+        tel: "電話番号"
+        stripe_customer_id: "Stripe顧客ID"
+      delivery_course:
+        name: "配送コース名"
+      delivery_order:
+        delivery_course: "配送コースID"
+        delivery_location: "納品場所ID"
+        position: "配送順"
+      category:
+        name: "カテゴリ名"
+        image: "写真"
+        icon: "アイコン"
+        description: "説明"
+      product:
+        category: "カテゴリID"
+        name: "商品名"
+        abbreviated_name: "商品名の略語"
+        catch_phrase: "キャッチフレーズ"
+        display_price: "表示価格"
+        common_selling_price: "共通販売価格"
+        is_public: "表示・非表示"
+        is_same_day_reservation: "当日予約"
+        period_start_on: "期間限定開始日"
+        period_end_on: "期間限定終了日"
+        description: "商品説明"
+        notes: "注釈"
+      product_image:
+        product: "商品ID"
+        image: "写真"
+      client_product_setting:
+        product: "商品ID"
+        client: "顧客ID"
+        price: "顧客別販売価格"
+        is_public: "表示・非表示"
+      order:
+        user: "ユーザーID"
+        product: "商品ID"
+        client_product_setting: "顧客別商品設定ID"
+        product_name: "商品名"
+        order_count: "注文商品数"
+        total_price: "合計金額"
+        stripe_payment_intent_id: "Stripe PaymentIntentID"
+      order_detail:
+        order: "注文ID"
+        count: "個数"
+        provision_on: "お届け日"

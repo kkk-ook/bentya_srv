@@ -1,0 +1,5 @@
+class AddCancelTimeToOrderHeaders < ActiveRecord::Migration[7.0]
+  def change
+    add_column :order_headers, :cancel_time, :string
+  end
+end
